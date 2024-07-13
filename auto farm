@@ -1,3 +1,46 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+   Name = "Box Auto Farm",
+   LoadingTitle = "Box Farm",
+   LoadingSubtitle = "By VVV",
+   ConfigurationSaving = {
+      Enabled = false,
+      FolderName = nil, -- Create a custom folder for your hub/game
+      FileName = "southbronxdrzyshub"
+   },
+   Discord = {
+      Enabled = true,
+      Invite = "https://discord.gg/fE73pKhZ6u", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      RememberJoins = false -- Set this to false to make them join the discord every time they load it up
+   },
+   KeySystem = false, -- Set this to true to use our key system
+   KeySettings = {
+      Title = "Untitled",
+      Subtitle = "Key System",
+      Note = "No method of obtaining the key is provided",
+      FileName = "Key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+      Key = {"Hello"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+   }
+})
+
+Rayfield:Notify({
+   Title = "You enabled VVV Farm",
+   Content = "TY",
+   Duration = 5,
+   Image = nil,
+   Actions = { -- Notification Buttons
+      Ignore = {
+         Name = "Okay!",
+         Callback = function()
+         print("The user tapped Okay!")
+      end
+   },
+},
+})
+
 local AutofarmTab = Window:CreateTab("Autofarm", nil) -- Title, Image
 local AutofarmSection = AutofarmTab:CreateSection("Main")
 
@@ -20,10 +63,10 @@ local FrameTitle = Instance.new("TextLabel")
 FrameTitle.Size = UDim2.new(1, 0, 0, 30)
 FrameTitle.Position = UDim2.new(0, 0, 0, 0)
 FrameTitle.BackgroundColor3 = Color3.fromRGB(110, 153, 202)
-FrameTitle.Text = "Boxes Autofarm"
+FrameTitle.Text = "Zzz's Autofarm"
 FrameTitle.TextColor3 = Color3.fromRGB(242, 243, 243)
 FrameTitle.Font = Enum.Font.SourceSansBold
-FrameTitle.TextSize = 22
+FrameTitle.TextSize = 24
 FrameTitle.Parent = Frame
 
 -- Create the button
