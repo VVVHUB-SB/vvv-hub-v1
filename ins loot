@@ -1,0 +1,17 @@
+-- MADE BY VVV DONT BE A BITCH
+
+local function makePromptsInstant()
+    local prompts = game:GetDescendants()
+    
+    for _, descendant in ipairs(prompts) do
+        if descendant:IsA("ProximityPrompt") then
+            descendant.HoldDuration = 0
+        end
+    end
+end
+makePromptsInstant()
+game.DescendantAdded:Connect(function(descendant)
+    if descendant:IsA("ProximityPrompt") then
+        descendant.HoldDuration = 0
+    end
+end)
